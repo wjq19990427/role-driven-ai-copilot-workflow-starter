@@ -31,7 +31,7 @@ cp -r /path/to/role-driven-ai-copilot-workflow-starter/{CLAUDE.md,roles,.claude,
 |---|---|
 | `CLAUDE.md` | 项目有特殊纪律时追加规则（如必须用某框架的某 API） |
 | `roles/{role}.md` | 角色行为需要项目特定约束时（很少需要） |
-| `docs/REVIEW_PROTOCOL.md` | 团队有特定 Review 流程时 |
+| `docs/WRAP_PROTOCOL.md` | 团队有特定 Review 流程时 |
 
 ### 不要改
 
@@ -79,7 +79,7 @@ Claude（PM 模式）会：
    按 Brief 写任务卡
 ```
 
-如此循环直到 `/review` 合并完成。
+如此循环直到 `/wrap` 合并完成。
 
 ---
 
@@ -91,7 +91,7 @@ Claude（PM 模式）会：
 
 ```bash
 /execute task-60         # 进入执行模式，立即读 docs/tasks/task-60.md
-/review task-60          # 进入复盘模式，对照 task-60 审 codex/task-60 分支
+/wrap task-60          # 进入复盘模式，对照 task-60 审 codex/task-60 分支
 /diagnose 登录页报错 500  # 进入诊断模式，立即开始定位
 ```
 
@@ -112,7 +112,7 @@ Claude: [读 task-60，开始实现]
 | `/diagnose` | 可选 | 一步法附症状/报错；或两步法描述 |
 | `/design` | 否 | 自动读 `_pm_brief.md` 或 `_diagnosis.md` |
 | `/execute` | **必需** | `task-N` 形式指定任务卡 |
-| `/review` | **必需** | `task-N` 形式指定要 review 的任务 |
+| `/wrap` | **必需** | `task-N` 形式指定要 review 的任务 |
 
 ### 切换角色
 
@@ -121,7 +121,7 @@ Claude: [读 task-60，开始实现]
 ```
 你: /design
 Claude: [设计师模式] 输出 task-60
-你: /review task-60
+你: /wrap task-60
 Claude: [复盘师模式] 开始审查...
 ```
 
@@ -172,10 +172,10 @@ Claude: [复盘师模式] 开始审查...
 | 层级 | 文件 | 用途 | 谁更新 | 更新时机 |
 |---|---|---|---|---|
 | L0 | `CLAUDE.md` + `roles/*.md` + `.claude/skills/*.md` | 角色规则 | 框架升级时 | 工作流变化 |
-| L1 | `docs/STATUS.md` + `docs/ARCHITECTURE.md` | 项目快照 | `/review` 角色 | 每次任务完成 |
+| L1 | `docs/STATUS.md` + `docs/ARCHITECTURE.md` | 项目快照 | `/wrap` 角色 | 每次任务完成 |
 | L2 | `docs/api/*.md` | API 契约 | `/design` 或 `/execute` 角色 | 改公开签名时 |
 | L3 | 源代码 | 实现细节 | `/execute` 角色 | 随代码变化 |
-| 记忆 | `docs/memory/*.md` | 跨会话上下文 | `/review` 角色 | 有沉淀价值时 |
+| 记忆 | `docs/memory/*.md` | 跨会话上下文 | `/wrap` 角色 | 有沉淀价值时 |
 
 ---
 
@@ -185,7 +185,7 @@ Claude: [复盘师模式] 开始审查...
 
 不必。简单任务可跳过某些步骤：
 
-- typo 修复：跳过 `/pm` `/diagnose` `/design`，直接 `/execute` + `/review`
+- typo 修复：跳过 `/pm` `/diagnose` `/design`，直接 `/execute` + `/wrap`
 - 已经清楚的 Bug：跳过 `/pm`，从 `/diagnose` 开始
 - 探索性想法：从 `/pm` 开始，可能在 PM Brief 后就停下
 
@@ -207,7 +207,7 @@ Claude: [复盘师模式] 开始审查...
 
 ### Q: 我可以删掉某个角色吗？
 
-可以。最少配置：`/design` + `/execute` + `/review`（三个角色覆盖核心流程）。
+可以。最少配置：`/design` + `/execute` + `/wrap`（三个角色覆盖核心流程）。
 
 但**记忆系统建议保留**——长期项目跨会话上下文价值大。
 
@@ -221,7 +221,7 @@ Claude: [复盘师模式] 开始审查...
 
 ```bash
 # 只替换框架文件，不动项目自定义内容
-cp -r /path/to/updated-template/{roles,.claude,docs/REVIEW_PROTOCOL.md,docs/HANDOFF_PROTOCOL.md,docs/api/_HOWTO.md,docs/memory/_HOWTO.md} .
+cp -r /path/to/updated-template/{roles,.claude,docs/WRAP_PROTOCOL.md,docs/HANDOFF_PROTOCOL.md,docs/api/_HOWTO.md,docs/memory/_HOWTO.md} .
 ```
 
 ---

@@ -17,12 +17,12 @@
 |---|---|---|
 | 关于 | 代码和任务 | 人和协作方式 |
 | 内容 | 当前版本、架构、最近任务 | 用户偏好、项目长尾背景 |
-| 更新者 | `/review` 每次任务后 | `/review` 有沉淀价值时 |
+| 更新者 | `/wrap` 每次任务后 | `/wrap` 有沉淀价值时 |
 | 上限 | ≤ 50 行 | 每文件 ≤ 200 行 |
 
 ---
 
-## 写入规则（仅 `/review` 角色）
+## 写入规则（仅 `/wrap` 角色）
 
 ### 决策树
 
@@ -48,7 +48,7 @@
 **How to apply：** {何时何地适用}
 ```
 
-**Why + How to apply 是必填**——让未来 `/review` 能判断这条记忆是否还适用。没有 Why 的规则就是教条，迟早过时。
+**Why + How to apply 是必填**——让未来 `/wrap` 能判断这条记忆是否还适用。没有 Why 的规则就是教条，迟早过时。
 
 ---
 
@@ -69,7 +69,7 @@
 | `/diagnose` | ✅ project.md、reference.md | ❌ |
 | `/design` | ✅ user.md、feedback.md、project.md | ❌ |
 | `/execute` | ❌ 不读（避免干扰实现专注） | ❌ |
-| `/review` | ✅ 全部 | ✅ 唯一写入者 |
+| `/wrap` | ✅ 全部 | ✅ 唯一写入者 |
 
 **为什么 execute 不读？** 实现阶段需要专注于任务卡和代码，记忆里的协作偏好对编码无直接价值，反而是干扰。
 
@@ -109,7 +109,7 @@
 每次 merge 前必须有结构化 Review 表格 + 明确 PASS/FAIL。
 
 **Why：** 用户希望 merge 决策可追溯
-**How to apply：** /review 角色不跳过 Review
+**How to apply：** /wrap 角色不跳过 Review
 ```
 
 ---

@@ -22,7 +22,7 @@
 
 - ❌ 不 push 到 main/master，只提交到自己的 branch
 - ❌ 不修改 `CLAUDE.md` / `roles/` / `.claude/skills/`
-- ❌ 不维护 `docs/STATUS.md`（那是 `/review` 阶段的事）
+- ❌ 不维护 `docs/STATUS.md`（那是 `/wrap` 阶段的事）
 - ❌ 不自行扩大或缩小任务范围
 - ❌ 不做计划外重构、抽象、风格调整、防御性扩展
 - ❌ 不在 try/except 中吞掉对架构决策有影响的异常
@@ -121,7 +121,7 @@ type：`feat` / `fix` / `refactor` / `docs` / `chore`
 **禁止**：
 - push 到 main/master
 - 修改角色定义、skill、CLAUDE.md
-- 改 STATUS.md（那是 `/review` 角色的事）
+- 改 STATUS.md（那是 `/wrap` 角色的事）
 
 ## 与其他角色的交接
 
@@ -129,7 +129,7 @@ type：`feat` / `fix` / `refactor` / `docs` / `chore`
 - `/design` 的任务卡（必读）
 
 **下游**：
-- `/review` 用任务卡验收清单审查 diff
+- `/wrap` 用任务卡验收清单审查 diff
 
 ## 自查清单
 

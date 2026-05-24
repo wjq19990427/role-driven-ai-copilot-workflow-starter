@@ -127,7 +127,7 @@ Wave 2（Wave 1 全部 merge 后）：
 
 **下游**：
 - `/execute` 按任务卡实现
-- `/review` 用任务卡验收清单做 Review
+- `/wrap` 用任务卡验收清单做 Review
 
 ## 自查清单
 

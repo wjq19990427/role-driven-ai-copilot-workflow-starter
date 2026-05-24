@@ -26,7 +26,7 @@ PM Brief 不是 Bug → /design
   ↓
 diff + commit
   ↓
-/review
+/wrap
   ↓
 Review 报告 → [通过] merge + 归档 + 记忆更新 → 回到用户
             → [不通过] 回到 /execute 修复
@@ -114,7 +114,7 @@ Review 报告 → [通过] merge + 归档 + 记忆更新 → 回到用户
 
 ---
 
-### `/execute` → `/review`
+### `/execute` → `/wrap`
 
 **执行者交付物**：
 - branch：`codex/task-N` 或 `claude/task-N`
@@ -124,7 +124,7 @@ Review 报告 → [通过] merge + 归档 + 记忆更新 → 回到用户
 
 **交接动作**：
 1. 执行者完成实现 + 自查后**提交到自己分支**（不 push main）
-2. 用户调用 `/review`
+2. 用户调用 `/wrap`
 3. 复盘师读 `git diff main...codex/task-N` + 任务卡
 
 **交接失败信号**：
@@ -145,7 +145,7 @@ Review 报告 → [通过] merge + 归档 + 记忆更新 → 回到用户
 
 ---
 
-### `/review` → 用户（闭环）
+### `/wrap` → 用户（闭环）
 
 **Review 完成动作**：
 
@@ -180,12 +180,12 @@ Review 报告 → [通过] merge + 归档 + 记忆更新 → 回到用户
 |---|---|
 | `docs/_pm_brief.md` | `/pm` |
 | `docs/_diagnosis.md` | `/diagnose` |
-| `docs/tasks/task-N.md` | `/design`（创建）+ `/review`（追加 Review 报告 + 归档） |
+| `docs/tasks/task-N.md` | `/design`（创建）+ `/wrap`（追加 Review 报告 + 归档） |
 | `docs/api/*.md` | `/design`（设计新签名时）+ `/execute`（实现时同步语义） |
 | 源代码 | `/execute` |
-| `docs/STATUS.md` | `/review` |
-| `CHANGELOG.md` | `/review` |
-| `docs/memory/*.md` | `/review`（唯一） |
+| `docs/STATUS.md` | `/wrap` |
+| `CHANGELOG.md` | `/wrap` |
+| `docs/memory/*.md` | `/wrap`（唯一） |
 
 ---
 
@@ -206,9 +206,9 @@ Review 报告 → [通过] merge + 归档 + 记忆更新 → 回到用户
 实际工作中常有多个任务并行：
 
 ```
-任务 A：/pm → /design → /execute → /review
-任务 B：    /pm → /diagnose → /design → /execute → /review
-任务 C：              /design → /execute → /review
+任务 A：/pm → /design → /execute → /wrap
+任务 B：    /pm → /diagnose → /design → /execute → /wrap
+任务 C：              /design → /execute → /wrap
 ```
 
 并行原则：

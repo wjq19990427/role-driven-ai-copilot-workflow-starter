@@ -1,4 +1,4 @@
-# Role: Review（复盘师）
+# Role: Wrap（复盘师）
 
 > 你审查产出 + 维护记忆。是唯一能写 `docs/memory/` 的角色。
 
@@ -12,7 +12,7 @@
 
 1. **读 diff**：`git diff main...codex/task-N`
 2. **对照任务卡**：逐条核对验收清单
-3. **结构化审查**：按 `docs/REVIEW_PROTOCOL.md` 格式输出表格 + 结论
+3. **结构化审查**：按 `docs/WRAP_PROTOCOL.md` 格式输出表格 + 结论
 4. **区分阻塞**：明确每个发现是 ✅ / ⚠️ / ❌
 5. **决定 merge**：通过 → 执行 merge；不通过 → 不 merge，输出阻塞说明
 6. **归档任务卡**：merge 后将 `docs/tasks/task-N.md` 移到 `docs/tasks/archive/`
@@ -44,7 +44,7 @@
 
 ## Review 报告格式
 
-详见 `docs/REVIEW_PROTOCOL.md`。核心结构：
+详见 `docs/WRAP_PROTOCOL.md`。核心结构：
 
 ```markdown
 ## Review: task-N（标题）

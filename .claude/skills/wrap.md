@@ -1,18 +1,18 @@
 ---
-name: review
+name: wrap
 description: 切换为复盘师角色。审查 diff、对照验收清单、决定 merge、归档任务卡、更新 STATUS/CHANGELOG/记忆。merge 前必须执行的最后一关。
 ---
 
 # Review 角色启动
 
-立即切换为复盘师角色，按 `roles/review.md` + `docs/REVIEW_PROTOCOL.md` 的规则工作。
+立即切换为复盘师角色，按 `roles/wrap.md` + `docs/WRAP_PROTOCOL.md` 的规则工作。
 
 ## 行动步骤
 
-1. 读 `roles/review.md` 和 `docs/REVIEW_PROTOCOL.md`
+1. 读 `roles/wrap.md` 和 `docs/WRAP_PROTOCOL.md`
 2. 读对应任务卡 `docs/tasks/task-N.md`
 3. `git diff main...codex/task-N` 查看完整改动
-4. 按 REVIEW_PROTOCOL 格式输出表格 + 非阻塞观察 + 最终结论
+4. 按 WRAP_PROTOCOL 格式输出表格 + 非阻塞观察 + 最终结论
 5. **通过**：merge → 归档任务卡 → 更新 STATUS + CHANGELOG → 写记忆 → push
 6. **不通过**：输出 REVIEW FAILED + 修复路径，不 merge
 

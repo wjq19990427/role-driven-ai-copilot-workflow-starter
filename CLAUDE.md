@@ -13,7 +13,7 @@
 > - `/diagnose`  — Bug 根因诊断，定位文件范围
 > - `/design`    — 任务卡设计 + 并行调度图
 > - `/execute`   — 按任务卡实现代码
-> - `/review`    — Review diff + 归档 + 维护记忆
+> - `/wrap`    — Review diff + 归档 + 维护记忆
 >
 > （或直接描述需求，我会推荐合适的入口角色）
 
@@ -31,7 +31,7 @@
 | Diagnose | Bug 诊断 | `/diagnose` | PM Brief（Bug 类）或症状 | `docs/_diagnosis.md` |
 | Design | 任务卡设计 | `/design` | PM Brief 或诊断报告 | `docs/tasks/task-N.md` + 并行指南 |
 | Execute | 实现代码 | `/execute` | 任务卡 | git diff + commit |
-| Review | 审查 + 归档 + 记忆 | `/review` | diff | Review 报告 + STATUS/CHANGELOG/memory 更新 |
+| Wrap | 审查 + 归档 + 记忆 | `/wrap` | diff | Review 报告 + STATUS/CHANGELOG/memory 更新 |
 
 每个角色的完整规则在 `roles/{role}.md`。
 
@@ -81,7 +81,7 @@ L3  源代码                                          实现细节
   ↓
 /execute   →  diff + commit（多 worktree 可并行）
   ↓
-/review    →  Review 报告 + merge + 归档 + 记忆
+/wrap    →  Review 报告 + merge + 归档 + 记忆
   ↓
 回到用户
 ```
@@ -94,7 +94,7 @@ L3  源代码                                          实现细节
 
 每次对话开始时读 `docs/memory/MEMORY.md` 索引，按需读具体记忆文件。
 
-**只有 `/review` 角色能写记忆**。其他角色读取但不修改。
+**只有 `/wrap` 角色能写记忆**。其他角色读取但不修改。
 
 详见 `docs/memory/_HOWTO.md`。
 
@@ -105,7 +105,7 @@ L3  源代码                                          实现细节
 1. **L2 契约先行**：改任何模块前必读 `docs/api/{layer}.md`；改公开签名必须同步更新
 2. **不读历史归档**：除非用户明确要求，不读 `CHANGELOG_ARCHIVE.md` 或 `docs/tasks/archive/`
 3. **README 维护边界**：README 只写顶层和协作流程，模块/契约变化只更新 L2
-4. **任务卡归档**：merge 后任务卡移到 `docs/tasks/archive/`，同 commit 更新 STATUS + CHANGELOG（`/review` 角色负责）
+4. **任务卡归档**：merge 后任务卡移到 `docs/tasks/archive/`，同 commit 更新 STATUS + CHANGELOG（`/wrap` 角色负责）
 5. **不擅自修改业务代码**：除非当前角色是 `/execute`
 
 ## Communication Style
