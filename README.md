@@ -48,6 +48,18 @@
 
 每个角色在 `roles/{role}.md` 中有完整定义：触发条件、做/不做、工作流程、权限范围、输出物格式、自查清单。
 
+### 触发方式
+
+```bash
+/pm                      # 进入 PM 模式，自然描述需求即可
+/diagnose                # 进入诊断模式，附上症状/报错
+/design                  # 进入设计模式（自动读上游 _pm_brief.md 或 _diagnosis.md）
+/execute task-N          # 进入执行模式，自动读 docs/tasks/task-N.md
+/review task-N           # 进入复盘模式，对照 task-N 审 codex/task-N 分支
+```
+
+`/execute` 和 `/review` 必须指定任务卡 ID（一步法）。也可两步法：先触发再说"做 task-N"。
+
 ---
 
 ## 快速开始
